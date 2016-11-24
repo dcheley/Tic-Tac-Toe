@@ -1,3 +1,5 @@
+$(document).on('ready', function () {
+
 $(function () {
   var turn = 0;
 
@@ -9,5 +11,7 @@ $(function () {
     }
 
     turn++;
+    });
   });
+  
 });
