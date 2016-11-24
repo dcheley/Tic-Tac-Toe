@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.table-board,
+.div-board {
+  border: 3px solid black;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+td,
+.cell {
+  border: 4px solid black;
+  height: 33.33333%;
+  width: 33.3333%;
+}
+
+.cell {
+  float: left;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 6em;
+}
