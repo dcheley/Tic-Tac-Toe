@@ -80,8 +80,35 @@
       if(diagonal_tl_br == 0 || diagonal_tr_bl == 0 || diagonal_tl_br == 3 || diagonal_tr_bl == 3) {
         return true;
       }
+
+      //Win condition for row [0,1,2], [3,4,5], [6,7,8]
+      //Win condition for column [0,3,6], [1,4,7], [2,5,8]
+      //Total must be 0 or 3 for win to occur, X are worth 1 point and O are worth 0 points
+      if(row_total == 0 || column_total == 0 || row_total == 3 || column_total == 3) {
+        return true;
+          }
+
+      //Draw: if all boxes are full
+      if(used_boxes == 9) {
+        gameDraw();
+      }
     }
+  }
+  var gameWon = function() {
+    clearEvents();
+
+    //show game won alerts
+    alerts.className = 'player-' + computeScenario() + '-win';
+
+    //update player score
+    switch(computeScenario()) {
+      case 'x':
+      pOneScore.innerHTML = ++pOneScore;
+      break;
+      case 'o':
+      pTwoScore.innerHTML = ++pTwoScore;
     }
+  }
     }
   }
 });
