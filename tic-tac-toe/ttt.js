@@ -109,6 +109,18 @@
       pTwoScore.innerHTML = ++pTwoScore;
     }
   }
+  //show game draw alert
+  var gameDraw = function() {
+    alerts.className = 'draw';
+    clearEvents();
+  }
+
+  //Stop user from clicking empty boxes after game is over
+  var clearEvents = function() {
+    for(var i = 0; i < boxes.length; i++) {
+      boxes[i].removeEventListener('click', clickHandler);
+    }
+  }
     }
   }
 });
