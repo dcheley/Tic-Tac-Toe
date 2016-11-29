@@ -46,5 +46,13 @@
 
     var position = this.getAttribute('position').split(',');
     gameBoard[position[0]][position[1]] = computeScenario() == 'x' ? 1 : 0;
+
+    if(checkStatus()) {
+      gameWon();
+    }
+
+    turns++;
+    currentScenario = computeScenario();
+    displayTurn.className = currentScenario;
   }
 });
