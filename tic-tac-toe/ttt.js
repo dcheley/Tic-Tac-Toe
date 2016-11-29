@@ -74,8 +74,8 @@
       }
 
       //Win condition for diagonal scenarios [0,4,8], [2,4,6]
-      var diagonal_tl_br == gameBoard[0][0] + gameBoard[1][1] + gameBoard[2][2]; // diagonal top left to bottom right
-      var diagonal_tr_bl== gameBoard[0][2] + gameBoard[1][1] + gameBoard[2][0]; // diagonal top right to bottom left
+      var diagonal_tl_br = gameBoard[0][0] + gameBoard[1][1] + gameBoard[2][2]; // diagonal top left to bottom right
+      var diagonal_tr_bl = gameBoard[0][2] + gameBoard[1][1] + gameBoard[2][0]; // diagonal top right to bottom left
 
       if(diagonal_tl_br == 0 || diagonal_tr_bl == 0 || diagonal_tl_br == 3 || diagonal_tr_bl == 3) {
         return true;
@@ -121,6 +121,23 @@
       boxes[i].removeEventListener('click', clickHandler);
     }
   }
-    }
+
+  //Restart game
+  var resetHandler = function() {
+    clearEvents();
+    init();
+
+  //Check over all <li> elements and remove className (x or o)
+  //Clear innerHTML
+  for(var i = 0; i < boxes.length; i++) {
+    boxes[i].className = '';
+    boxes[i].innerHTML = '';
   }
-});
+
+  //Change revert turn class to player1
+  displayTurn.className = currentScenario;
+  alerts.className = '';
+}
+
+  board && init();
+})();
