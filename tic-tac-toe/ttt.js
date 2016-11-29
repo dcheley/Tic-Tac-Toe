@@ -1,17 +1,10 @@
-$(document).on('ready', function () {
-
-$(function () {
-  var turn = 0;
-
-  $('td').click (function() {
-    if (turn % 2 === 0) {
-    $(this).html('X');
-    } else {
-      $(this).html('O');
-    }
-
-    turn++;
-    });
-  });
-  
+(function Game() {
+  //HTML Elements
+  var board = document.getElementById('board');
+  var boxes = document.querySelectorAll('li');
+  var reset = document.getElementById('reset');
+  var displayTurn = document.getElementById('player-turn');
+  var alert = document.getElementById('alerts');
+  var pOneScore = document.getElementById('player-one-score');
+  var pTwoScore = document.getElementById('player-two-score');
 });

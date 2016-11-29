@@ -7,35 +7,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   </head>
   <body>
-    <table class="table-board">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </table>
+    <div class="container">
+      <h1>PLAY TIC TAC TOE!</h1>
+      <ul id ="board">
+        <li position="0,0"></li>
+        <li position="0,1"></li>
+        <li position="0,2"></li>
 
-    <div class="div-board">
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
+        <li position="1,0"></li>
+        <li position="1,1"></li>
+        <li position="1,2"></li>
+
+        <li position="2,0"></li>
+        <li position="2,1"></li>
+        <li position="2,2"></li>
+      </ul>
+
+      <button id="reset">Restart Game</button>
+
+      <div id="alerts">
+        <span class="player-one-win">Player 1 Wins!</span>
+        <span class="player-two-win">Player 2 Wins!</span>
+        <span class="draw">Another Round!?</span>
+      </div>
+
+      <aside id="info">
+        <h2>Who's Turn:</h2>
+        <div id="player-turn" class="x">
+          <span class="x">Player 1</span>
+          <spam class="o">Player 2</span>
+        </div>
+
+        <h2>Score Card</h2>
+        <div id="score">
+          Player 1: <span id="player-one-score"> <br>
+          Player 2: <span id="player-two-score"> <br>
+        </div>
+      </aside>
     </div>
-
     <script src="ttt.js" charset="utf-8"></script>
   </body>
 </html>
