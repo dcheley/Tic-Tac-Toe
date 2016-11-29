@@ -63,3 +63,13 @@ h1 {
     height: 100px;
     border: 0;
 }
+
+#info {
+    text-align:center;
+    margin-top: 10px;
+}
+
+#player-turn > span,
+#alerts > span {
+    display: none;
+}
