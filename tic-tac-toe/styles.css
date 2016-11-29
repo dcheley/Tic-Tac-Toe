@@ -73,3 +73,12 @@ h1 {
 #alerts > span {
     display: none;
 }
+
+#player-turn.x span.x,
+#player-turn.o span.o,
+#alerts.player-x-win > span.player-x-win,
+#alerts.player-o-win > span.player-o-win,
+#alerts.draw > span.draw {
+    display: block;
+    margin-top: 10px;
+}
