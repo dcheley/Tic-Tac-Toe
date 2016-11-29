@@ -86,7 +86,7 @@
       //Total must be 0 or 3 for win to occur, X are worth 1 point and O are worth 0 points
       if(row_total == 0 || column_total == 0 || row_total == 3 || column_total == 3) {
         return true;
-          }
+      }
 
       //Draw: if all boxes are full
       if(used_boxes == 9) {
