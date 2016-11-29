@@ -98,16 +98,16 @@
   var gameWon = function() {
     clearEvents();
 
-    //Show game won alerts
-    alerts.className = 'player-' + computeScenario() + '-win';
+  //Show game won alerts
+  alerts.className = 'player-' + computeScenario() + '-win';
 
-    //Update player score
-    switch(computeScenario()) {
-      case 'x':
-        pOneScore.innerHTML = ++pOneScore;
-        break;
-      case 'o':
-        pTwoScore.innerHTML = ++pTwoScore;
+  //Update player score
+  switch(computeScenario()) {
+    case 'x':
+      pOneScore.innerHTML = ++pOneScore;
+      break;
+    case 'o':
+      pTwoScore.innerHTML = ++pTwoScore;
     }
   }
   //Show game draw alert
