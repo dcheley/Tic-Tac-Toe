@@ -104,10 +104,10 @@
     //Update player score
     switch(computeScenario()) {
       case 'x':
-      pOneScore.innerHTML = ++pOneScore;
-      break;
+        pOneScore.innerHTML = ++pOneScore;
+        break;
       case 'o':
-      pTwoScore.innerHTML = ++pTwoScore;
+        pTwoScore.innerHTML = ++pTwoScore;
     }
   }
   //Show game draw alert
