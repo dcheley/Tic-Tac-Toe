@@ -5,8 +5,8 @@
   var reset = document.getElementById('reset');
   var displayTurn = document.getElementById('player-turn');
   var alert = document.getElementById('alerts');
-  var pOneScore = document.getElementById('player-one-score');
-  var pTwoScore = document.getElementById('player-two-score');
+  var displayOneScore = document.getElementById('player-one-score');
+  var displayTwoScore = document.getElementById('player-two-score');
 
   //Variables
   var scenario = { 'player1' : 'x', 'player2' : 'o'};
@@ -104,10 +104,10 @@
   //Update player score
   switch(computeScenario()) {
     case 'x':
-      pOneScore.innerHTML = ++pOneScore;
+      displayOneScore.innerHTML = ++pOneScore;
       break;
     case 'o':
-      pTwoScore.innerHTML = ++pTwoScore;
+      displayTwoScore.innerHTML = ++pTwoScore;
     }
   }
   //Show game draw alert

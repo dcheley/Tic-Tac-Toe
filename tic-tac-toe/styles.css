@@ -12,6 +12,10 @@ h1 {
     color: #f1f1f1
 }
 
+h2 {
+  text-transform: uppercase; 
+}
+
 .container {
     margin: 0 auto;
     width: 400px;
