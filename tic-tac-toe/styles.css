@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  text-transform: uppercase; 
+  text-transform: uppercase;
 }
 
 .container {
@@ -50,12 +50,12 @@ h2 {
 
 #board > li.x {
     font-size: 40px;
-    color: #ed4e6e
+    color: #E9967A;
 }
 
 #board > li.o {
     font-size: 40px;
-    color: #485b6e;
+    color: #778899;
 }
 
 #board > li:hover {
