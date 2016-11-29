@@ -55,4 +55,33 @@
     currentScenario = computeScenario();
     displayTurn.className = currentScenario;
   }
+
+  //Check for win
+  var checkStatus = function() {
+    var used_boxes = 0;
+
+    for(var rows = 0; rows < board.length; rows++ ) {
+      var row_total = 0;
+      var column_total = 0;
+
+      for(var columns = 0; columns < board[rows].length; columns++) {
+        row_total += gameBoard[rows][columns];
+        column_total += gameBoard[columns][rows];
+
+        if(typeof gameBoard[rows][columns] !== "undefined") {
+          used_boxes++;
+        }
+      }
+
+      //Win condition for diagonal scenarios [0,4,8], [2,4,6]
+      var diagonal_tl_br == gameBoard[0][0] + gameBoard[1][1] + gameBoard[2][2]; // diagonal top left to bottom right
+      var diagonal_tr_bl== gameBoard[0][2] + gameBoard[1][1] + gameBoard[2][0]; // diagonal top right to bottom left
+
+      if(diagonal_tl_br == 0 || diagonal_tr_bl == 0 || diagonal_tl_br == 3 || diagonal_tr_bl == 3) {
+        return true;
+      }
+    }
+    }
+    }
+  }
 });
