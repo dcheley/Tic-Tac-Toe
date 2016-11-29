@@ -76,8 +76,8 @@ h1 {
 
 #player-turn.x span.x,
 #player-turn.o span.o,
-#alerts.player-x-win > span.player-x-win,
-#alerts.player-o-win > span.player-o-win,
+#alerts.player-one-win > span.player-one-win,
+#alerts.player-two-win > span.player-two-win,
 #alerts.draw > span.draw {
     display: block;
     margin-top: 10px;

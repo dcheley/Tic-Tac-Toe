@@ -60,11 +60,11 @@
   var checkStatus = function() {
     var used_boxes = 0;
 
-    for(var rows = 0; rows < board.length; rows++ ) {
+    for(var rows = 0; rows < gameBoard.length; rows++ ) {
       var row_total = 0;
       var column_total = 0;
 
-      for(var columns = 0; columns < board[rows].length; columns++) {
+      for(var columns = 0; columns < gameBoard[rows].length; columns++) {
         row_total += gameBoard[rows][columns];
         column_total += gameBoard[columns][rows];
 
@@ -94,13 +94,14 @@
       }
     }
   }
+
   var gameWon = function() {
     clearEvents();
 
-    //show game won alerts
+    //Show game won alerts
     alerts.className = 'player-' + computeScenario() + '-win';
 
-    //update player score
+    //Update player score
     switch(computeScenario()) {
       case 'x':
       pOneScore.innerHTML = ++pOneScore;
@@ -109,7 +110,7 @@
       pTwoScore.innerHTML = ++pTwoScore;
     }
   }
-  //show game draw alert
+  //Show game draw alert
   var gameDraw = function() {
     alerts.className = 'draw';
     clearEvents();
