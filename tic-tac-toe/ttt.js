@@ -4,7 +4,7 @@
   var boxes = document.querySelectorAll('li');
   var reset = document.getElementById('reset');
   var displayTurn = document.getElementById('player-turn');
-  var alert = document.getElementById('alerts');
+  var alerts = document.getElementById('alerts');
   var displayOneScore = document.getElementById('p1-score');
   var displayTwoScore = document.getElementById('p2-score');
 
@@ -99,7 +99,7 @@
     clearEvents();
 
   //Show game won alerts
-  alerts.className = 'player-' + computeScenario() + '-win';
+  alerts.className = 'p' + computeScenario() + '-win';
 
   //Update player score
   switch(computeScenario()) {

@@ -80,8 +80,8 @@ h2 {
 
 #player-turn.x span.x,
 #player-turn.o span.o,
-#alerts.p1-win > span.p1-win,
-#alerts.p2-win > span.p2-win,
+#alerts.px-win > span.px-win,
+#alerts.po-win > span.po-win,
 #alerts.draw > span.draw {
     display: block;
     margin-top: 10px;
