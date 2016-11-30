@@ -84,7 +84,7 @@ h2 {
 #alerts.po-win > span.po-win,
 #alerts.draw > span.draw {
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #reset {
