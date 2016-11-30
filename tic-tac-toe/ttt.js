@@ -5,8 +5,8 @@
   var reset = document.getElementById('reset');
   var displayTurn = document.getElementById('player-turn');
   var alert = document.getElementById('alerts');
-  var displayOneScore = document.getElementById('player-one-score');
-  var displayTwoScore = document.getElementById('player-two-score');
+  var displayOneScore = document.getElementById('p1-score');
+  var displayTwoScore = document.getElementById('p2-score');
 
   //Variables
   var scenario = { 'player1' : 'x', 'player2' : 'o'};
