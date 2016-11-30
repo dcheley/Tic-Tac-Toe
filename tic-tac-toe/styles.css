@@ -1,5 +1,4 @@
 body {
-    margin-top: 40px;
     background: #A52A2A;
     color: #fff;
     font-family: Helvetica;
@@ -71,6 +70,7 @@ h2 {
 #info {
     text-align:center;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #player-turn > span,
