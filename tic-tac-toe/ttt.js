@@ -73,7 +73,6 @@
       alerts.className = '';
     }
 
-
   //Bind reset player1 score action to click
   var resetOneHandler = function() {
     pOneScore = 0;
