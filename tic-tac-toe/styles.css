@@ -76,6 +76,11 @@ h2 {
 #player-turn > span,
 #alerts > span {
     display: none;
+    color: #9e9e9e;
+}
+
+#score > span {
+  color: #9e9e9e;
 }
 
 #player-turn.x span.x,
@@ -114,6 +119,6 @@ h2 {
         cursor: pointer;
         display: inline-block;
         margin: 3px 2px;
-        margin-left: 15px;
+        margin-left: 5px;
         border-radius: 32px;
 }
