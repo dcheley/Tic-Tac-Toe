@@ -18,7 +18,7 @@
   var turns;
   var currentScenario;
 
-  //Constructor
+  //Constructor (Create the game!)
   var init = function() {
     turns = 0;
 
@@ -37,12 +37,7 @@
       resetTwo.addEventListener('click', resetTwoHandler, false);
   }
 
-  //Track current turn
-  var computeScenario = function() {
-    return (turns % 2 == 0) ? scenario.player1 : scenario.player2;
-  }
-
-  //Bind the dom element to the click callback
+  //Bind the dom element (board position) to the click callback
   var clickHandler = function() {
     this.removeEventListener('click', clickHandler);
 
@@ -61,7 +56,40 @@
     displayTurn.className = currentScenario;
   }
 
-  //Check for win
+  //Bind restart game action to click
+  var restartHandler = function() {
+    clearEvents();
+    init();
+
+    //Check over all <li> elements and remove className (x or o)
+    //Clear innerHTML
+    for (var i = 0; i < boxes.length; i++) {
+      boxes[i].className = '';
+      boxes[i].innerHTML = '';
+    }
+
+      //Change revert turn class to player1
+      displayTurn.className = currentScenario;
+      alerts.className = '';
+    }
+
+
+  //Bind reset player1 score action to click
+  var resetOneHandler = function() {
+    displayOneScore.innerHTML = '';
+  }
+
+  //Bind reset player2 score action to click
+  var resetTwoHandler = function() {
+    displayTwoScore.innerHTML = '';
+  }
+
+  //Track current turn
+  var computeScenario = function() {
+    return (turns % 2 == 0) ? scenario.player1 : scenario.player2;
+  }
+
+  //Check for win conditions
   var checkStatus = function() {
     var used_boxes = 0;
 
@@ -100,6 +128,19 @@
     }
   }
 
+  //Show game draw alert
+  var gameDraw = function() {
+    alerts.className = 'draw';
+    clearEvents();
+  }
+
+  //Stop user from clicking empty boxes after game is over
+  var clearEvents = function() {
+    for(var i = 0; i < boxes.length; i++) {
+      boxes[i].removeEventListener('click', clickHandler);
+    }
+  }
+
   var gameWon = function() {
     clearEvents();
     //Show game won alerts
@@ -114,41 +155,6 @@
       }
   }
 
-  //Show game draw alert
-  var gameDraw = function() {
-    alerts.className = 'draw';
-    clearEvents();
-  }
+  board && init();
 
-  //Stop user from clicking empty boxes after game is over
-  var clearEvents = function() {
-    for(var i = 0; i < boxes.length; i++) {
-      boxes[i].removeEventListener('click', clickHandler);
-    }
-  }
-
-  //Reset player1 score
-  var resetOneHandler = function() {
-    displayOneScore.innerHTML = '';
-  }
-
-  //Reset player2 score
-  var resetTwoHandler = function() {
-    displayTwoScore.innerHTML = '';
-  }
-  //Restart game
-  var restartHandler = function() {
-    clearEvents();
-    init();
-    //Check over all <li> elements and remove className (x or o)
-    //Clear innerHTML
-    for (var i = 0; i < boxes.length; i++) {
-      boxes[i].className = '';
-      boxes[i].innerHTML = '';
-    }
-      //Change revert turn class to player1
-      displayTurn.className = currentScenario;
-      alerts.className = '';
-    }
-    board && init();
   })();
