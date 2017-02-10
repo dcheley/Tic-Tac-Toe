@@ -76,11 +76,13 @@
 
   //Bind reset player1 score action to click
   var resetOneHandler = function() {
+    pOneScore = 0;
     displayOneScore.innerHTML = '';
   }
 
   //Bind reset player2 score action to click
   var resetTwoHandler = function() {
+    pTwoScore = 0;
     displayTwoScore.innerHTML = '';
   }
 
