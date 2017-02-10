@@ -2,7 +2,9 @@
   //HTML Elements
   var board = document.getElementById('board');
   var boxes = document.querySelectorAll('li');
-  var reset = document.getElementById('reset');
+  var restart = document.getElementById('restart');
+  var resetOne = document.getElementById('reset-1');
+  var resetTwo = document.getElementById('reset-2');
   var displayTurn = document.getElementById('player-turn');
   var alerts = document.getElementById('alerts');
   var displayOneScore = document.getElementById('p1-score');
@@ -30,8 +32,11 @@
     for (var i = 0; i < boxes.length; i++) {
       boxes[i].addEventListener('click', clickHandler, false);
       }
-      reset.addEventListener('click', resetHandler, false);
+      restart.addEventListener('click', restartHandler, false);
+      resetOne.addEventListener('click', resetOneHandler, false);
+      resetTwo.addEventListener('click', resetTwoHandler, false);
   }
+
   //Track current turn
   var computeScenario = function() {
     return (turns % 2 == 0) ? scenario.player1 : scenario.player2;
@@ -47,7 +52,7 @@
     var position = this.getAttribute('position').split(',');
     gameBoard[position[0]][position[1]] = computeScenario() == 'x' ? 1 : 0;
 
-    if(checkStatus()) {
+    if (checkStatus()) {
       gameWon();
     }
 
@@ -60,15 +65,15 @@
   var checkStatus = function() {
     var used_boxes = 0;
 
-    for(var rows = 0; rows < gameBoard.length; rows++ ) {
+    for (var rows = 0; rows < gameBoard.length; rows++ ) {
       var row_total = 0;
       var column_total = 0;
 
-      for(var columns = 0; columns < gameBoard[rows].length; columns++) {
+      for (var columns = 0; columns < gameBoard[rows].length; columns++) {
         row_total += gameBoard[rows][columns];
         column_total += gameBoard[columns][rows];
 
-        if(typeof gameBoard[rows][columns] !== "undefined") {
+        if (typeof gameBoard[rows][columns] !== "undefined") {
           used_boxes++;
         }
       }
@@ -77,19 +82,19 @@
       var diagonal_tl_br = gameBoard[0][0] + gameBoard[1][1] + gameBoard[2][2]; // diagonal top left to bottom right
       var diagonal_tr_bl = gameBoard[0][2] + gameBoard[1][1] + gameBoard[2][0]; // diagonal top right to bottom left
 
-      if(diagonal_tl_br == 0 || diagonal_tr_bl == 0 || diagonal_tl_br == 3 || diagonal_tr_bl == 3) {
+      if (diagonal_tl_br == 0 || diagonal_tr_bl == 0 || diagonal_tl_br == 3 || diagonal_tr_bl == 3) {
         return true;
       }
 
       //Win condition for row [0,1,2], [3,4,5], [6,7,8]
       //Win condition for column [0,3,6], [1,4,7], [2,5,8]
       //Total must be 0 or 3 for win to occur, X are worth 1 point and O are worth 0 points
-      if(row_total == 0 || column_total == 0 || row_total == 3 || column_total == 3) {
+      if (row_total == 0 || column_total == 0 || row_total == 3 || column_total == 3) {
         return true;
       }
 
       //Draw: if all boxes are full
-      if(used_boxes == 9) {
+      if (used_boxes == 9) {
         gameDraw();
       }
     }
@@ -97,19 +102,18 @@
 
   var gameWon = function() {
     clearEvents();
-
-  //Show game won alerts
-  alerts.className = 'p' + computeScenario() + '-win';
-
-  //Update player score
-  switch(computeScenario()) {
-    case 'x':
-      displayOneScore.innerHTML = ++pOneScore;
-      break;
-    case 'o':
-      displayTwoScore.innerHTML = ++pTwoScore;
-    }
+    //Show game won alerts
+    alerts.className = 'p' + computeScenario() + '-win';
+    //Update player score
+    switch(computeScenario()) {
+      case 'x':
+        displayOneScore.innerHTML = ++pOneScore;
+        break;
+      case 'o':
+        displayTwoScore.innerHTML = ++pTwoScore;
+      }
   }
+
   //Show game draw alert
   var gameDraw = function() {
     alerts.className = 'draw';
@@ -123,22 +127,28 @@
     }
   }
 
-  //Restart game
-  var resetHandler = function() {
-    clearEvents();
-    init();
-
-  //Check over all <li> elements and remove className (x or o)
-  //Clear innerHTML
-  for(var i = 0; i < boxes.length; i++) {
-    boxes[i].className = '';
-    boxes[i].innerHTML = '';
+  //Reset player1 score
+  var resetOneHandler = function() {
+    displayOneScore.innerHTML = '';
   }
 
-  //Change revert turn class to player1
-  displayTurn.className = currentScenario;
-  alerts.className = '';
-}
-
-  board && init();
-})();
+  //Reset player2 score
+  var resetTwoHandler = function() {
+    displayTwoScore.innerHTML = '';
+  }
+  //Restart game
+  var restartHandler = function() {
+    clearEvents();
+    init();
+    //Check over all <li> elements and remove className (x or o)
+    //Clear innerHTML
+    for (var i = 0; i < boxes.length; i++) {
+      boxes[i].className = '';
+      boxes[i].innerHTML = '';
+    }
+      //Change revert turn class to player1
+      displayTurn.className = currentScenario;
+      alerts.className = '';
+    }
+    board && init();
+  })();
