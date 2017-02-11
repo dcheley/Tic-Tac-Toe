@@ -1,14 +1,14 @@
 body {
-    background: #A52A2A;
-    color: #fff;
-    font-family: Helvetica;
-    font-weight: bold;
-    text-align: center;
+  background: #A52A2A;
+  color: #fff;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-align: center;
 }
 
 h1 {
-    letter-spacing: 0.1em;
-    color: #f1f1f1
+  letter-spacing: 0.1em;
+  color: #f1f1f1
 }
 
 h2 {
@@ -16,67 +16,67 @@ h2 {
 }
 
 .container {
-    margin: 0 auto;
-    width: 400px;
+  margin: 0 auto;
+  width: 400px;
 }
 
 #board {
-    width: 300px;
-    height: 300px;
-    border: 1px solid #dadada;
-    margin: 0 auto;
-    padding: 0;
-    margin-bottom: 20px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #dadada;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
 #board > li {
-    list-style: none;
-    float: left;
-    overflow: hidden;
-    text-decoration:none;
-    width: 100px;
-    height: 100px;
-    background: #f1f1f1;
-    border: 1px solid #ccc;
-    border-right: 1px solid #fff;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-align: center;
-    padding-top: 20px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  list-style: none;
+  float: left;
+  overflow: hidden;
+  text-decoration:none;
+  width: 100px;
+  height: 100px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  border-right: 1px solid #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #board > li.x {
-    font-size: 40px;
-    color: #E9967A;
+  font-size: 40px;
+  color: #E9967A;
 }
 
 #board > li.o {
-    font-size: 40px;
-    color: #778899;
+  font-size: 40px;
+  color: #778899;
 }
 
 #board > li:hover {
-    background: #f9f9f9;
+  background: #f9f9f9;
 }
 
 #board > li:active {
-    width: 100px;
-    height: 100px;
-    border: 0;
+  width: 100px;
+  height: 100px;
+  border: 0;
 }
 
 #info {
-    text-align:center;
-    margin-top: 10px;
-    margin-bottom: 15px;
+  text-align:center;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 #player-turn > span,
 #alerts > span {
-    display: none;
-    color: #9e9e9e;
+  display: none;
+  color: #9e9e9e;
 }
 
 #score > span {
@@ -88,37 +88,37 @@ h2 {
 #alerts.px-win > span.px-win,
 #alerts.po-win > span.po-win,
 #alerts.draw > span.draw {
-    display: block;
-    margin-top: 20px;
+  display: block;
+  margin-top: 20px;
 }
 
 #restart {
-    text-align: center;
-        border: none;
-        padding: 0.6em 1.2em;
-        background: black;
-        color: #fff;
-        font-size: 1em;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        cursor: pointer;
-        display: inline-block;
-        margin: 3px 2px;
-        border-radius: 2px;
+  text-align: center;
+  border: none;
+  padding: 0.6em 1.2em;
+  background: black;
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  margin: 3px 2px;
+  border-radius: 2px;
 }
 
 #reset-1, #reset-2 {
-    text-align: center;
-        border: none;
-        padding: 0.4em 0.6em;
-        background: black;
-        color: #fff;
-        font-size: 1em;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        cursor: pointer;
-        display: inline-block;
-        margin: 3px 2px;
-        margin-left: 5px;
-        border-radius: 32px;
+  text-align: center;
+  border: none;
+  padding: 0.4em 0.6em;
+  background: black;
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  margin: 3px 2px;
+  margin-left: 5px;
+  border-radius: 32px;
 }
