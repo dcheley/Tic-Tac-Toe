@@ -1,9 +1,10 @@
 # Play Tic Tac Toe!
-A dynamic page that allows multiple games to be played without redirects!
+A fully functional tic tac toe game built with HTML, CSS & Javascript! No redirects required.
 
-Open the index.html file in your browser or click this link and scroll down to play tic tac toe: 'http://danielcheley.herokuapp.com' 
+Click this link or open the index.html file in your browser to play tic tac toe: 'https://codepen.io/dchee/pen/BmdyGX'
 
 # Features:
-* Restart Game.
-* Score Display and Reset.
-* Result Notifications (who wins/loses/draw).
+* Restart game.
+* Score display and reset option.
+* Result notifications (who wins/loses/draw).
+* Responsive design.

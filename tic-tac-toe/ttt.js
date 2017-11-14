@@ -121,7 +121,6 @@
       if (row_total == 0 || column_total == 0 || row_total == 3 || column_total == 3) {
         return true;
       }
-
       //Draw: if all boxes are full
       if (used_boxes == 9) {
         gameDraw();
@@ -157,5 +156,5 @@
   }
 
   board && init();
-
-  })();
+  
+})();
